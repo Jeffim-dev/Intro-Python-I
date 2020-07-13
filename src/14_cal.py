@@ -30,3 +30,37 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+# def make_calendar(month=datetime.today().month, year=datetime.today().year):
+#     calendar.setfirstweekday(6)
+#     print(calendar.month(year, month))
+
+# if len(sys.argv) == 3:    
+#     make_calendar(int(sys.argv[1]), int(sys.argv[2]))
+
+# else:
+#     make_calendar() 
+
+user_choice = input("Enter Month Year:").split(" ")
+length = len(user_choice)
+now = datetime.now()
+calendar.setfirstweekday(6)
+
+if user_choice[0] == "":
+   print(calendar.month(now.year, now.month))
+elif length == 1:
+  try:
+    print(calendar.month(now.year, int(user_choice[0])))
+  except IndexError:
+    print('Wrong number')
+  except ValueError:
+    print('Please enter a valid number')
+elif length == 2:
+  try:
+    print(calendar.month(int(user_choice[1]), int(user_choice[0])))
+  except IndexError:
+    print('Wrong numbers')
+  except ValueError:
+    print('Please enter valid numbers')
+else:
+   print("Please enter month followed by year")
