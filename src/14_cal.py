@@ -31,16 +31,6 @@ import sys
 import calendar
 from datetime import datetime
 
-# def make_calendar(month=datetime.today().month, year=datetime.today().year):
-#     calendar.setfirstweekday(6)
-#     print(calendar.month(year, month))
-
-# if len(sys.argv) == 3:    
-#     make_calendar(int(sys.argv[1]), int(sys.argv[2]))
-
-# else:
-#     make_calendar() 
-
 user_choice = input("Enter Month Year:").split(" ")
 length = len(user_choice)
 now = datetime.now()
@@ -64,3 +54,27 @@ elif length == 2:
     print('Please enter valid numbers')
 else:
    print("Please enter month followed by year")
+
+
+########################################################################################
+
+# num_args = len(sys.argv)
+
+# if num_args == 1:
+#     month = datetime.now().month
+#     year = datetime.now().year   
+
+# elif num_args == 2:
+#     year = datetime.now().year
+#     month = int(sys.argv[1])
+
+# elif num_args == 3:
+#     year = int(sys.argv[2])
+#     month = int(sys.argv[1])
+
+# else:
+#     print("usage: 14_cal/py [month] [year]")
+#     sys.exit(1)
+
+# cal = calendar.TextCalendar()
+# cal.prmonth(year, month)
